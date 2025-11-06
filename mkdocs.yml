@@ -1,0 +1,18 @@
+site_name: Automações SPF
+site_description: Internal reference and guides for automation scripts and workflows
+site_author: SEPLAG
+repo_url: https://github.com/SPF-SEPLAG/docs-spf
+theme:
+  name: material
+  features:
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - content.code.copy
+nav:
+  - Home: index.md
+  - Dashboards:
+      - PAC e Contratos: dashboards/dccc.md
+      - Planejamento Orçamentário: dashboards/dpo.md
+  - Automações:
+      - Modules: reference/modules.md
