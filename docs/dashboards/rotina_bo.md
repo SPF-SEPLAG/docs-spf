@@ -1,1 +1,0 @@
-Este documento tem o intuito de documentar a rotina de atualização de dados de painel BI do BO institucional via Power Automate. 

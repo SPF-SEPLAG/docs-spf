@@ -1,6 +1,6 @@
 # Dashboards PAC, Contratos, Convênios e TDCOs
 
-Esses painéis foram desenvolvidos no **Power BI** para consolidar e monitorar informações financeiras referentes ao Planejamento Anual de Compras, Contratações, Convênios e Termos de Descntralização de Crédito Orçamentário em que a SEPLAG está envolvida. 
+Esses painéis foram desenvolvidos para consolidar e monitorar informações financeiras referentes ao Planejamento Anual de Compras, Contratações, Convênios e Termos de Descentralização de Crédito Orçamentário em que a SEPLAG está envolvida. 
 
 ---
 
@@ -11,7 +11,8 @@ O objetivo dos dashboards é oferecer **visão consolidada e atualizada** das pr
 ---
 
 ## Público-Alvo
-- Diretoria de Planejamento
+- Diretoria de Compras, Contratos e Convênios (DCCC).
+- Diretoria de Planejamento e Orçamento (DPO).
 - Gestores de Programas e Projetos  
 - Áreas contratantes
 
@@ -37,7 +38,7 @@ O dashboard está disponível em:
 
 ## Atualizações e Manutenção
 
-- Os painéis são atualizados **diariamente**, de **hora em hora**, via configuração do Modelo Semântico do Power BI online. 
+- Os painéis são atualizados **diariamente**, de **hora em hora**, das 10h-17h, via configuração do Modelo Semântico do Power BI online. 
 - Além disso, para as bases extraídas do B.O, é necessária uma configuração adicional para a atualização dos dados por meio de fluxo elaborado a partir de integração entre o SAP e o Power Automate Web.
 
 ---
@@ -46,8 +47,8 @@ O dashboard está disponível em:
 
 - **Power BI (Desktop e Online)** — plotagem de visualizações e atualização automática dos dados
 - **Power Query / DAX** — transformação e modelagem de dados  
-- **Power Automate Web** — integração, geração e envio de bases de dados
-- **SAP (B.O ou BI Corporativo)** - criação de consultas para extração de dados.
+- **SAP (B.O ou BI Corporativo)** - geração e envio de bases de dados
+- **Power Automate Web** — integração de bases de dados
 
 ---
 

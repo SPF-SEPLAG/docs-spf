@@ -5,14 +5,39 @@ repo_url: https://github.com/SPF-SEPLAG/docs-spf
 theme:
   name: material
   features:
-    - navigation.expand
+#    - navigation.expand
     - navigation.top
     - search.highlight
     - content.code.copy
+
+markdown_extensions:
+  - attr_list
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+extra_javascript:
+  - https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js
 nav:
   - Home: index.md
   - Dashboards:
-      - PAC e Contratos: dashboards/dccc.md
-      - Planejamento Orçamentário: dashboards/dpo.md
-  - Automações:
-      - Modules: reference/modules.md
+      - PAC e Contratos: dashboards/dccc/intro.md
+      - Execução Orçamentária:
+        - Introdução: dashboards/dpo/intro.md
+        - Projeto e Cronograma: dashboards/dpo/projeto.md
+        - Integração das ferramentas e fluxo ETL: dashboards/dpo/fluxo_geral.md
+        - Download automatizado da planilha: dashboards/dpo/placeholder1.md
+        - Credenciamento Sharepoint e Github:  dashboards/dpo/placeholder2.md
+        - Pré-processamento dos dados: dashboards/dpo/pre_processamento_dados.md
+        - Workflow Github Actions: dashboards/dpo/placeholder3.md
+      - Guias e tutoriais:
+        - Power BI: 
+          - Carregar dados PBI: dashboards/guides/pbi/carregar_dados.md
+          - Configurar Modelo Semântico PBI: dashboards/guides/pbi/configurar_modelo_semantico.md
+        - Github:
+          - Github Actions: dashboards/guides/github/github_actions.md
+          - Criar Secrets e PAT: dashboards/guides/github/criar_secrets_pat.md
+          - Access Token e Refresh Token: dashboards/guides/github/access_refresh_tokens.md
