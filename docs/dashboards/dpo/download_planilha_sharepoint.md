@@ -1,4 +1,8 @@
-# 
+# Download da planilha do Sharepoint
+
+- Abaixo segue o detalhamento do script de download da planilha e do script de geração dos Tokens necessários para o credenciamento no Sharepoint.
+
+
 
 
 

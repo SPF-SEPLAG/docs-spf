@@ -28,7 +28,7 @@ nav:
       - Execução Orçamentária:
         - Introdução: dashboards/dpo/intro.md
         - Projeto e Cronograma: dashboards/dpo/projeto.md
-        - Integração das ferramentas e fluxo ETL: dashboards/dpo/fluxo_geral.md
+        - Integração das ferramentas e processamento dos dados: dashboards/dpo/fluxo_geral.md
         - Download automatizado da planilha: dashboards/dpo/placeholder1.md
         - Credenciamento Sharepoint e Github:  dashboards/dpo/placeholder2.md
         - Pré-processamento dos dados: dashboards/dpo/pre_processamento_dados.md

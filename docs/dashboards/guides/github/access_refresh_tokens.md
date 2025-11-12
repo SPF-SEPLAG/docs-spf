@@ -5,3 +5,5 @@ Segundo [Auth0](https://auth0.com/blog/pt-refresh-tokens-what-are-they-and-when-
 É fundamental ter estratégias de segurança que minimizem o risco de comprometer os tokens de acesso. Um método de mitigação é criar tokens de acesso com vida útil curta: eles são válidos apenas por um curto período definido em termos de horas ou dias. 
 
 Depois que expiram, as aplicações cliente podem usar um Refresh Token para "atualizar" o token de acesso. Ou seja, um Refresh Token é um artefato de credencial que permite que uma aplicação cliente obtenha novos tokens de acesso sem precisar solicitar que o usuário faça login novamente. 
+
+Dessa forma, devido ao tempo curto de expiração do Access Token, em rotinas de automação que requerem credenciamento de usuários, como é o caso do processamento dos dados no painel de [Execução Orçamentária](../../dpo/intro.md), o Refresh Token é utilizado para gerar novos Access Tokens continuamente e validar a execução da rotina junto à API específica que está sendo utilizada.

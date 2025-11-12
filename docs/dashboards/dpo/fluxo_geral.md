@@ -1,38 +1,10 @@
-# Integração das ferramentas e fluxo geral de atualização dos dados
+# Integração das ferramentas e processamento dos dados
 
 Para garantir o processamento e a atualização dos dados em tempo real, foi necessário definir um fluxo de **ETL (Extract, Transform, Load)** que englobasse todo o processo: download automático da planilha, tratamento e modelagem dos dados via `pandas`, e carregamento dos resultados no painel do Power BI — tudo de forma totalmente automatizada.  
 
-Para isso, foram investigadas quais ferramentas melhor atenderiam a cada etapa e como integrá-las em um único fluxo contínuo.
+Para isso, foram investigadas quais ferramentas melhor atenderiam a cada etapa e como integrá-las em um único fluxo contínuo. Em linhas gerais, são utilizadas as seguintes ferramentas, de forma integrada: **Sharepoint, python, Github e PBI**.
 
-Abaixo está uma explicação resumida de cada tecnologia envolvida e do fluxo geral da rotina.
-
----
-
-## Fluxo geral
-
-<div class="mermaid">
-flowchart TD
-A["Início do processo"] --> B["Execução manual inicial do script Python"]
-B --> C["Login manual na conta organizacional (MSAL)"]
-C --> D["Geração do Access Token e Refresh Token"]
-D --> E["Armazenamento em cache local (msal_cache.bin)"]
-E --> F["Commit e push do cache para o repositório privado do GitHub"]
-F --> G["Execução automática via GitHub Actions"]
-G --> H["Download automatizado da planilha do SharePoint"]
-H --> I["Tratamento e modelagem dos dados com pandas"]
-I --> J["Exportação dos CSVs tratados"]
-J --> K["Commit automático dos CSVs no repositório via workflow.yml"]
-K --> L["Carregamento dos dados no Power BI"]
-L --> M["Fim do processo"]
-</div>
-
----
-
-## Comentários sobre o fluxo
-
-- A **primeira execução** requer login manual e gera os tokens iniciais.  
-- As **execuções seguintes** são 100% automáticas, até o vencimento do Refresh Token.  
-- O **GitHub Actions** atua como o motor de automação, orquestrando todo o fluxo ETL.
+Abaixo está uma explicação resumida de cada tecnologia envolvida e do fluxo geral da rotina. 
 
 ---
 
@@ -62,7 +34,7 @@ Por motivos de segurança, o repositório GitHub foi configurado como **privado*
 
 Para que a rotina automatizada funcione corretamente — especialmente nos momentos em que a VM precisa **enviar commits** ao repositório e **carregar dados** no Power BI — é necessário o uso de credenciais de acesso.  
 
-Essas credenciais são configuradas por meio dos **Secrets** e **Personal Access Tokens (PATs)**, definidos dentro do próprio GitHub.  
+Essas credenciais são configuradas por meio dos **Secrets** e **Personal Access Token (PAT)**, definidos dentro do próprio GitHub.  
 O passo a passo para criação dessas credenciais está descrito [neste guia](../guides/github/criar_secrets_pat.md).
 
 ---
@@ -90,7 +62,7 @@ Para resolver esse problema, foi implementada uma **autenticação automática**
 
 > Para entender o que são **Access Token** e **Refresh Token**, [leia aqui](../guides/github/access_refresh_tokens.md).
 
-Na primeira execução do script, o login é feito manualmente, e os tokens gerados são armazenados em um arquivo de cache (`msal_cache.bin`).  
+Na primeira execução do script, o login é feito manualmente, e os tokens gerados são armazenados em um arquivo de cache (`msal_cache.bin`). 
 Esse arquivo é então commitado no repositório privado do GitHub.
 
 Nas execuções seguintes, o fluxo usa o **Refresh Token armazenado** para gerar automaticamente um novo **Access Token**, sem necessidade de login manual.  
@@ -100,5 +72,34 @@ Assim, o **GitHub Actions** executa todo o processo de autenticação e download
 > Ainda não há uma definição exata sobre sua validade, portanto é necessário **monitorar as execuções** dos workflows do GitHub Actions e **regerar manualmente** os tokens quando necessário.
 ---
 
+## Fluxo geral
+
+<div class="mermaid">
+flowchart TD
+A["Início do processo"] --> B["Execução manual inicial do script Python<br>de download da planilha da DPO"]
+B --> C["Login manual na conta organizacional (MSAL)"]
+C --> D["Geração do Access Token e Refresh Token"]
+D --> E["Armazenamento em cache local (msal_cache.bin)"]
+E --> F["Commit e push do cache para o repositório privado do GitHub"]
+F --> G["Execução automática da rotina via GitHub Actions"]
+G --> H["Download automatizado da planilha do SharePoint"]
+H --> I["Tratamento e modelagem dos dados com pandas"]
+I --> J["Exportação dos CSVs tratados"]
+J --> K["Commit automático dos CSVs no repositório via workflow.yml"]
+K --> L["Carregamento dos dados no Power BI"]
+L --> M["Fim do processo"]
+</div>
+
+---
+
+explicar o fluxo
+
+## Comentários sobre o fluxo
+
+- A **primeira execução** requer login manual e gera os tokens iniciais.  
+- As **execuções seguintes** são 100% automáticas, até o vencimento do Refresh Token.  
+- O **GitHub Actions** atua como o motor de automação, orquestrando todo o fluxo ETL.
+
+---
 
 
