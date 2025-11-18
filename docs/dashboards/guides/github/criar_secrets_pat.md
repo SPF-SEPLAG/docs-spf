@@ -3,7 +3,9 @@
 
 ## Criar PAT
 
-> Conta > Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token > Generate new token (classic) > Note: gh-action-push > Select scopes: repo (marcar checkbox) > Generate token > Copiar o hash do token (sugestão: copiar e salvar para um txt, pois você não conseguirá ver ele novamente). 
+> Conta > Settings > Developer settings > Personal access tokens > Tokens (classic) > Generate new token > Generate new token (classic) > Note: gh-action-push > Select scopes: repo (marcar checkbox) > Generate token > Copiar o hash do token 
+
+**Sugestão: copiar e salvar para um txt, pois você não conseguirá ver ele novamente**. 
 
 ![alt text](../../../images/criar_secrets_pat/criar-pat1.png)
 ![alt text](../../../images/criar_secrets_pat/criar-pat2.png)

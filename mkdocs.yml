@@ -23,6 +23,8 @@ extra_javascript:
   - https://unpkg.com/mermaid@10.4.0/dist/mermaid.min.js
 nav:
   - Home: index.md
+  - Automações: 
+    - Dados de pagamento em ordem cronológica: automacoes/filtragem_excel.md
   - Dashboards:
       - PAC e Contratos: dashboards/dccc/intro.md
       - Execução Orçamentária:

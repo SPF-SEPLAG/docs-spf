@@ -72,6 +72,12 @@ Assim, o **GitHub Actions** executa todo o processo de autenticação e download
 > Ainda não há uma definição exata sobre sua validade, portanto é necessário **monitorar as execuções** dos workflows do GitHub Actions e **regerar manualmente** os tokens quando necessário.
 ---
 
+### Obtenção dos scripts de download, credenciais organizacionais API sharepoint e gerações dos Tokens
+
+Deve-se ressaltar que a elaboração da rotina descrita aqui contou com suporte da equipe da **Assessoria da Inteligência de Dados da Subsecretaria Central de Planejamento e Orçamento da SEPLAG/MG**. Além do auxílio para projetar e implementar a rotina, foi cedido o script **sharepoint_utils.py** que contém as funções de gerar os Tokens e de realizar download e upload de arquivos do Sharepoint, além das credenciais organizacionais de acesso aos serviços do **Office 365** via API. 
+
+> Detalhar que a função de gerar os Tokens teve que ser modificada para funcionar
+
 ## Fluxo geral
 
 <div class="mermaid">
@@ -80,7 +86,7 @@ A["Início do processo"] --> B["Execução manual inicial do script Python<br>de
 B --> C["Login manual na conta organizacional (MSAL)"]
 C --> D["Geração do Access Token e Refresh Token"]
 D --> E["Armazenamento em cache local (msal_cache.bin)"]
-E --> F["Commit e push do cache para o repositório privado do GitHub"]
+E --> F["Commit e push manual do cache para o repositório privado do GitHub"]
 F --> G["Execução automática da rotina via GitHub Actions"]
 G --> H["Download automatizado da planilha do SharePoint"]
 H --> I["Tratamento e modelagem dos dados com pandas"]
@@ -92,11 +98,9 @@ L --> M["Fim do processo"]
 
 ---
 
-explicar o fluxo
-
 ## Comentários sobre o fluxo
 
-- A **primeira execução** requer login manual e gera os tokens iniciais.  
+- A **primeira execução** requer login, commit e push manualmente para gerar os tokens iniciais e o arquivo cache.
 - As **execuções seguintes** são 100% automáticas, até o vencimento do Refresh Token.  
 - O **GitHub Actions** atua como o motor de automação, orquestrando todo o fluxo ETL.
 
