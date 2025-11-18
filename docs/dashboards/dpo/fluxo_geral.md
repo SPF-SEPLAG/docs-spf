@@ -74,9 +74,7 @@ Assim, o **GitHub Actions** executa todo o processo de autenticação e download
 
 ### Obtenção dos scripts de download, credenciais organizacionais API sharepoint e gerações dos Tokens
 
-Deve-se ressaltar que a elaboração da rotina descrita aqui contou com suporte da equipe da **Assessoria da Inteligência de Dados da Subsecretaria Central de Planejamento e Orçamento da SEPLAG/MG**. Além do auxílio para projetar e implementar a rotina, foi cedido o script **sharepoint_utils.py** que contém as funções de gerar os Tokens e de realizar download e upload de arquivos do Sharepoint, além das credenciais organizacionais de acesso aos serviços do **Office 365** via API. 
-
-> Detalhar que a função de gerar os Tokens teve que ser modificada para funcionar
+Deve-se ressaltar que a elaboração da rotina descrita aqui contou com suporte da equipe da **Assessoria da Inteligência de Dados da Subsecretaria Central de Planejamento e Orçamento da SEPLAG/MG**. Além do auxílio para projetar e implementar a rotina, foi cedido o script **sharepoint_utils.py** que contém as funções de gerar os Tokens e de realizar download e upload de arquivos do Sharepoint, além das credenciais organizacionais de acesso aos serviços do **Office 365** via `API`. 
 
 ## Fluxo geral
 
