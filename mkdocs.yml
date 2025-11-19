@@ -30,8 +30,8 @@ nav:
       - Execução Orçamentária:
         - Introdução: dashboards/dpo/intro.md
         - Projeto e Cronograma: dashboards/dpo/projeto.md
-        - Integração das ferramentas e processamento dos dados: dashboards/dpo/fluxo_geral.md
-        - Download automatizado da planilha: dashboards/dpo/placeholder1.md
+        - Integração das ferramentas e fluxo geral: dashboards/dpo/fluxo_geral.md
+        - Download da planilha e geração dos Tokens: dashboards/dpo/download.md
         - Credenciamento Sharepoint e Github:  dashboards/dpo/placeholder2.md
         - Pré-processamento dos dados: dashboards/dpo/pre_processamento_dados.md
         - Workflow Github Actions: dashboards/dpo/placeholder3.md
@@ -40,6 +40,7 @@ nav:
           - Carregar dados PBI: dashboards/guides/pbi/carregar_dados.md
           - Configurar Modelo Semântico PBI: dashboards/guides/pbi/configurar_modelo_semantico.md
         - Github:
+          - Criar repositório github: dashboard/guides/github/criar_repo.md
           - Github Actions: dashboards/guides/github/github_actions.md
           - Criar Secrets e PAT: dashboards/guides/github/criar_secrets_pat.md
           - Access Token e Refresh Token: dashboards/guides/github/access_refresh_tokens.md

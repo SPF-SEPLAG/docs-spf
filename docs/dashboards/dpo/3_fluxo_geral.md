@@ -1,4 +1,4 @@
-# Integração das ferramentas e processamento dos dados
+# Integração das ferramentas e fluxo geral
 
 Para garantir o processamento e a atualização dos dados em tempo real, foi necessário definir um fluxo de **ETL (Extract, Transform, Load)** que englobasse todo o processo: download automático da planilha, tratamento e modelagem dos dados via `pandas`, e carregamento dos resultados no painel do Power BI — tudo de forma totalmente automatizada.  
 
