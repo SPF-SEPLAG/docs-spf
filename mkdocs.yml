@@ -37,10 +37,14 @@ nav:
         - Workflow Github Actions: dashboards/dpo/placeholder3.md
       - Guias e tutoriais:
         - Power BI: 
-          - Carregar dados PBI: dashboards/guides/pbi/carregar_dados.md
-          - Configurar Modelo Semântico PBI: dashboards/guides/pbi/configurar_modelo_semantico.md
+          - Carregar dados PBI: guides/pbi/carregar_dados.md
+          - Configurar Modelo Semântico PBI: guides/pbi/configurar_modelo_semantico.md
         - Github:
-          - Criar repositório github: dashboard/guides/github/criar_repo.md
-          - Github Actions: dashboards/guides/github/github_actions.md
-          - Criar Secrets e PAT: dashboards/guides/github/criar_secrets_pat.md
-          - Access Token e Refresh Token: dashboards/guides/github/access_refresh_tokens.md
+          - Criar repositório github: guides/github/criar_repo.md
+          - Github Actions: guides/github/conceitos/github_actions.md
+          - Criar Secrets e PAT: guides/github/criar_secrets_pat.md
+          - Access Token e Refresh Token: guides/github/conceitos/access_refresh_tokens.md
+          - Criar SSH: guides/github/conceitos/criar_ssh.md
+        - Camg: 
+          - Configurar proxy: guides/camg/config_proxy.md
+          - Configurar ssh: guides/camg/config_ssh.md
